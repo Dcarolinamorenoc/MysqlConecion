@@ -164,3 +164,40 @@
    GROUP BY offices.officeCode, offices.city;
    
    ```
+
+-------------------------------------------------------------------------
+
+**Consultas Extras** 
+
+
+
+6. **Obtener detalles de los pedidos, incluyendo la información del cliente y los productos ordenados:**
+
+   ```sql
+   
+   ```
+
+7. **Listar todos los pagos realizados, junto con la información del cliente y su representante de ventas:**
+
+   ```sql
+   
+   ```
+
+8. **Obtener una lista de todos los productos, junto con sus líneas de productos y el total de cantidad ordenada:**
+
+   ```sql
+   
+   ```
+
+9. **Listar todos los pedidos con detalles del cliente y el nombre del representante de ventas:**
+
+   ```sql
+   
+   ```
+
+10. **Obtener el total de pagos realizados por cada cliente y el nombre del representante de ventas asignado:**
+
+   ```sql
+
+   ```
+
