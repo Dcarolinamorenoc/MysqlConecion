@@ -1,0 +1,17 @@
+{
+  "name": "mysqlconecion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.1",
+    "mysql2": "^3.10.0"
+  }
+}
