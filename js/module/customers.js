@@ -19,7 +19,60 @@ export const getAllLastNameDESC = async()=>{
 }
 
 
+
 // -----------------------------------------------------------------------------------------------
 
 
 // CONSULTAS DE LA ACTIVIDAD EN CLASE 
+
+
+// 3.Detalles de un cliente específico (por ejemplo, customerNumber = 101):
+
+export const getCustomerInfoById = async () => {
+    const [result] = await connection.query(`
+        SELECT 
+            customerNumber, customerName, contactLastName, contactFirstName,
+            phone, addressLine1, addressLine2, city, state, postalCode,
+            country, salesRepEmployeeNumber, creditLimit 
+        FROM customers 
+        WHERE customerNumber = 249
+    `);
+    return result;
+}
+
+
+// 9.Listar todos los clientes en una ciudad específica (por ejemplo, 'Madrid'):
+
+export const getCustomersInNYC = async () => {
+    const [result] = await connection.query(`
+        SELECT customerNumber, customerName, contactFirstName, contactLastName, city 
+        FROM customers 
+        WHERE city = 'NYC'
+    `);
+    return result;
+}
+
+
+
+// CONSULTAS MULTITABLA
+
+
+// 3. Listar todos los clientes junto con su representante de ventas:
+
+
+export const getCustomerSalesReps = async () => {
+    const [result] = await connection.query(`
+        SELECT 
+            c.customerNumber,
+            c.customerName,
+            e.firstName AS salesRepFirstName,
+            e.lastName AS salesRepLastName,
+            e.employeeNumber,
+            e.officeCode
+        FROM 
+            customers c
+        JOIN 
+            employees e ON c.salesRepEmployeeNumber = e.employeeNumber
+    `);
+    return result;
+}
