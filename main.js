@@ -43,7 +43,7 @@ import {
 } from "./js/module/offices.js";
 
 
-// console.log(await getAllLastNameDESC());
+console.log(await getAllLastNameDESC());
 
 // -----------------------------------------------------------------------
 
@@ -63,4 +63,4 @@ import {
 // console.log(await getEmployeeOfficeInfo());
 // console.log(await getCustomerSalesReps());
 // console.log(await getProductTotalOrdered());
-console.log(await getOfficeEmployeeCount());
+// console.log(await getOfficeEmployeeCount());
