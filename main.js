@@ -36,7 +36,8 @@ import{
 import{
     getShippedOrders,
     getOrderAndCustomerInfo,
-    getAllOrderDetails
+    getAllOrderDetails,
+    getOrderDetails
 } from "./js/module/orders.js";
 
 
@@ -78,4 +79,5 @@ console.log(await getAllLastNameDESC());
 // console.log(await getOfficeEmployeeCount());
 // console.log(await getAllOrderDetails());
 // console.log(await getPaymentDetails());
-console.log(await getProductDetails());
+// console.log(await getProductDetails());
+console.log(await getOrderDetails());

@@ -69,3 +69,26 @@ export const getAllOrderDetails = async () => {
     `);
     return result;
 };
+
+
+// 9.Listar todos los pedidos con detalles del cliente y el nombre del representante de ventas:
+
+export const getOrderDetails = async () => {
+    const [result] = await connection.query(`
+        SELECT 
+            o.orderNumber,
+            o.orderDate,
+            c.customerNumber,
+            c.customerName,
+            c.contactLastName AS customerLastName,
+            e.employeeNumber AS salesRepEmployeeNumber,
+            CONCAT(e.firstName, ' ', e.lastName) AS salesRepName
+        FROM 
+            orders o
+        JOIN 
+            customers c ON o.customerNumber = c.customerNumber
+        LEFT JOIN 
+            employees e ON c.salesRepEmployeeNumber = e.employeeNumber;
+    `);
+    return result;
+};
