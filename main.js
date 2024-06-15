@@ -33,7 +33,8 @@ import{
 
 import{
     getShippedOrders,
-    getOrderAndCustomerInfo
+    getOrderAndCustomerInfo,
+    getAllOrderDetails
 } from "./js/module/orders.js";
 
 
@@ -49,6 +50,10 @@ console.log(await getAllLastNameDESC());
 
 // Consultas de la actividad en clase
 
+
+// CONSULTAS NORMALES
+
+
 // console.log(await getAllProductInfo());
 // console.log(await getEmployeesByOfficeCode());
 // console.log(await getCustomerInfoById());
@@ -59,8 +64,14 @@ console.log(await getAllLastNameDESC());
 // console.log(await getOfficesInJapan());
 // console.log(await getCustomersInNYC());
 // console.log(await getProductsAbovePrice());
+
+
+// CONSULTAS MULTITABLA
+
+
 // console.log(await getOrderAndCustomerInfo());
 // console.log(await getEmployeeOfficeInfo());
 // console.log(await getCustomerSalesReps());
 // console.log(await getProductTotalOrdered());
 // console.log(await getOfficeEmployeeCount());
+// console.log(await getAllOrderDetails());

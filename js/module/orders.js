@@ -39,3 +39,33 @@ export const getOrderAndCustomerInfo = async () => {
     `);
     return result;
 }
+
+
+// 6.Obtener detalles de los pedidos, incluyendo la información del cliente y los productos ordenados:
+
+
+export const getAllOrderDetails = async () => {
+    const [result] = await connection.query(`
+        SELECT
+            orders.orderNumber,
+            orders.orderDate,
+            orders.status,
+            customers.customerNumber,
+            customers.customerName,
+            customers.contactLastName,
+            orderdetails.productCode,
+            products.productName,
+            orderdetails.quantityOrdered
+        FROM
+            orders
+        JOIN
+            customers ON orders.customerNumber = customers.customerNumber
+        JOIN
+            orderdetails ON orders.orderNumber = orderdetails.orderNumber
+        JOIN
+            products ON orderdetails.productCode = products.productCode
+        ORDER BY
+            orders.orderNumber;
+    `);
+    return result;
+};
