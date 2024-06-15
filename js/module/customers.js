@@ -76,3 +76,27 @@ export const getCustomerSalesReps = async () => {
     `);
     return result;
 }
+
+
+// 10.Obtener el total de pagos realizados por cada cliente y el nombre del representante de ventas asignado:
+
+export const getCustomerPayments = async () => {
+    const [result] = await connection.query(`
+        SELECT 
+            c.customerNumber,
+            c.customerName,
+            CONCAT(e.firstName, ' ', e.lastName) AS salesRepName,
+            SUM(p.amount) AS totalPayments
+        FROM 
+            customers c
+        LEFT JOIN 
+            payments p ON c.customerNumber = p.customerNumber
+        LEFT JOIN 
+            employees e ON c.salesRepEmployeeNumber = e.employeeNumber
+        GROUP BY 
+            c.customerNumber, c.customerName, salesRepName
+        ORDER BY 
+            c.customerNumber;
+    `);
+    return result;
+};

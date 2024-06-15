@@ -3,7 +3,8 @@ import {
     getAllLastNameDESC,
     getCustomerInfoById,
     getCustomersInNYC,
-    getCustomerSalesReps
+    getCustomerSalesReps,
+    getCustomerPayments
 } from "./js/module/customers.js";
 
 
@@ -80,4 +81,5 @@ console.log(await getAllLastNameDESC());
 // console.log(await getAllOrderDetails());
 // console.log(await getPaymentDetails());
 // console.log(await getProductDetails());
-console.log(await getOrderDetails());
+// console.log(await getOrderDetails());
+console.log(await getCustomerSalesReps());
