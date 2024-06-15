@@ -15,6 +15,8 @@ export const getPaymentsByCustomerNumber = async () => {
 
 // CONSULTAS MULTITABLAS
 
+// 7.Listar todos los pagos realizados, junto con la información del cliente y su representante de ventas:
+
 export const getPaymentDetails = async () => {
     const [result] = await connection.query(`
         SELECT 

@@ -21,7 +21,8 @@ import {
     getAllProductInfo,
     getTotalStockQuantity,
     getProductsAbovePrice,
-    getProductTotalOrdered
+    getProductTotalOrdered,
+    getProductDetails
 } from "./js/module/products.js";
 
 
@@ -76,4 +77,5 @@ console.log(await getAllLastNameDESC());
 // console.log(await getProductTotalOrdered());
 // console.log(await getOfficeEmployeeCount());
 // console.log(await getAllOrderDetails());
-console.log(await getPaymentDetails());
+// console.log(await getPaymentDetails());
+console.log(await getProductDetails());
