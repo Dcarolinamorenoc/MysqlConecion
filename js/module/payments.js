@@ -11,3 +11,29 @@ export const getPaymentsByCustomerNumber = async () => {
     `);
     return result;
 }
+
+
+// CONSULTAS MULTITABLAS
+
+export const getPaymentDetails = async () => {
+    const [result] = await connection.query(`
+        SELECT 
+            p.customerNumber,
+            c.customerName,
+            c.contactLastName,
+            c.contactFirstName,
+            p.checkNumber,
+            e.employeeNumber AS salesRepEmployeeNumber,
+            e.lastName AS salesRepLastName,
+            e.firstName AS salesRepFirstName
+        FROM 
+            payments p
+        JOIN 
+            customers c ON p.customerNumber = c.customerNumber
+        LEFT JOIN 
+            employees e ON c.salesRepEmployeeNumber = e.employeeNumber
+        ORDER BY 
+            p.paymentDate DESC;
+    `);
+    return result;
+};

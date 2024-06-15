@@ -27,7 +27,8 @@ import {
 
 
 import{
-    getPaymentsByCustomerNumber
+    getPaymentsByCustomerNumber,
+    getPaymentDetails
 } from "./js/module/payments.js";
 
 
@@ -75,3 +76,4 @@ console.log(await getAllLastNameDESC());
 // console.log(await getProductTotalOrdered());
 // console.log(await getOfficeEmployeeCount());
 // console.log(await getAllOrderDetails());
+console.log(await getPaymentDetails());
